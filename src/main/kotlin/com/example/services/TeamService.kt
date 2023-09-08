@@ -2,8 +2,7 @@ package com.example.services
 
 import com.example.models.Team
 
-class TeamService(teams: MutableList<Team>): CRUDService<Team>(teams) {
-    
+class TeamService(teams: MutableList<Team> = mutableListOf()): CRUDService<Team>(teams) {
     init {
         for(i in 1 .. 100){
             list.add(Team(i,"test $i"))

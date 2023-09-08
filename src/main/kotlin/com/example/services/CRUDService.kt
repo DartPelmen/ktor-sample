@@ -1,11 +1,9 @@
 package com.example.services
 
-abstract class CRUDService<T>(private val list: MutableList<T> = mutableListOf()){
-    fun add(entity: T) {
-        list.add(entity)    
-    }
+abstract class CRUDService<T>(val list: MutableList<T> = mutableListOf()){
+    abstract fun add(entity: T)
     abstract fun update(id: Int, entity: T)
     abstract fun delete(id: Int)
     abstract fun read(id: Int): T?
-    fun readAll(): List<T> = list
+    abstract fun readAll(): List<T>
 }
